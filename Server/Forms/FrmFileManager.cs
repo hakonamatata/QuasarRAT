@@ -82,10 +82,38 @@ namespace xServer.Forms
             }
         }
 
+        private void DirSearch(string sDir)
+        {
+            try
+            {
+                foreach (string d in Directory.GetDirectories(sDir))
+                {
+
+                    string[] files = Directory.GetFiles(d);
+                    foreach (string s in files)
+                    {
+
+                    }
+
+                    //foreach (string f in Directory.GetFiles(d))
+                    //{
+                    //    Console.WriteLine(f);
+                    //}
+                    //DirSearch(d);
+                }
+            }
+            catch (System.Exception excpt)
+            {
+                Console.WriteLine(excpt.Message);
+            }
+        }
+
         private void downloadToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             foreach (ListViewItem files in lstDirectory.SelectedItems)
             {
+
                 PathType type = (PathType)files.Tag;
 
                 if (type == PathType.File)
@@ -100,6 +128,15 @@ namespace xServer.Forms
 
                         AddTransfer(id, "Download", "Pending...", files.SubItems[0].Text);
                     }
+                }
+                else if (type == PathType.Directory)
+                {
+                    // ask user if he wants to download all files in folder
+                    MessageBox.Show("Do you want to download all files in folder: " + files.SubItems[0].Text + "?");
+
+                    string path = GetAbsolutePath(files.SubItems[0].Text);
+                    DirSearch(path);
+
                 }
             }
         }

@@ -62,7 +62,7 @@
             this.txtConsoleInput.Location = new System.Drawing.Point(3, 306);
             this.txtConsoleInput.MaxLength = 200;
             this.txtConsoleInput.Name = "txtConsoleInput";
-            this.txtConsoleInput.Size = new System.Drawing.Size(631, 16);
+            this.txtConsoleInput.Size = new System.Drawing.Size(631, 20);
             this.txtConsoleInput.TabIndex = 0;
             this.txtConsoleInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtConsoleInput_KeyDown);
             // 
@@ -84,7 +84,7 @@
             // 
             // FrmRemoteShell
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 323);
             this.Controls.Add(this.tableLayoutPanel);

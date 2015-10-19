@@ -49,6 +49,7 @@ namespace xServer.Forms
             this.stripLblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.contextMenuStripTransfers = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cancelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imgListTransfers = new System.Windows.Forms.ImageList(this.components);
             this.TabControlFileManager = new xServer.Controls.DotNetBarTabControl();
@@ -69,7 +70,6 @@ namespace xServer.Forms
             this.hTransferType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.hStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.hFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.contextMenuStripDirectory.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.contextMenuStripTransfers.SuspendLayout();
@@ -80,6 +80,7 @@ namespace xServer.Forms
             // 
             // contextMenuStripDirectory
             // 
+            this.contextMenuStripDirectory.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStripDirectory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.downloadToolStripMenuItem,
             this.uploadToolStripMenuItem,
@@ -93,14 +94,14 @@ namespace xServer.Forms
             this.refreshToolStripMenuItem,
             this.openDirectoryInShellToolStripMenuItem});
             this.contextMenuStripDirectory.Name = "ctxtMenu";
-            this.contextMenuStripDirectory.Size = new System.Drawing.Size(240, 198);
+            this.contextMenuStripDirectory.Size = new System.Drawing.Size(294, 230);
             // 
             // downloadToolStripMenuItem
             // 
             this.downloadToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.downloadToolStripMenuItem.Image = global::xServer.Properties.Resources.download;
             this.downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
-            this.downloadToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.downloadToolStripMenuItem.Size = new System.Drawing.Size(293, 26);
             this.downloadToolStripMenuItem.Text = "Download";
             this.downloadToolStripMenuItem.Click += new System.EventHandler(this.downloadToolStripMenuItem_Click);
             // 
@@ -108,20 +109,20 @@ namespace xServer.Forms
             // 
             this.uploadToolStripMenuItem.Image = global::xServer.Properties.Resources.upload;
             this.uploadToolStripMenuItem.Name = "uploadToolStripMenuItem";
-            this.uploadToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.uploadToolStripMenuItem.Size = new System.Drawing.Size(293, 26);
             this.uploadToolStripMenuItem.Text = "Upload";
             this.uploadToolStripMenuItem.Click += new System.EventHandler(this.uploadToolStripMenuItem_Click);
             // 
             // lineToolStripMenuItem
             // 
             this.lineToolStripMenuItem.Name = "lineToolStripMenuItem";
-            this.lineToolStripMenuItem.Size = new System.Drawing.Size(236, 6);
+            this.lineToolStripMenuItem.Size = new System.Drawing.Size(290, 6);
             // 
             // executeToolStripMenuItem
             // 
             this.executeToolStripMenuItem.Image = global::xServer.Properties.Resources.run;
             this.executeToolStripMenuItem.Name = "executeToolStripMenuItem";
-            this.executeToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.executeToolStripMenuItem.Size = new System.Drawing.Size(293, 26);
             this.executeToolStripMenuItem.Text = "Execute";
             this.executeToolStripMenuItem.Click += new System.EventHandler(this.executeToolStripMenuItem_Click);
             // 
@@ -129,7 +130,7 @@ namespace xServer.Forms
             // 
             this.renameToolStripMenuItem.Image = global::xServer.Properties.Resources.textfield_rename;
             this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
-            this.renameToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.renameToolStripMenuItem.Size = new System.Drawing.Size(293, 26);
             this.renameToolStripMenuItem.Text = "Rename";
             this.renameToolStripMenuItem.Click += new System.EventHandler(this.renameToolStripMenuItem_Click);
             // 
@@ -137,40 +138,40 @@ namespace xServer.Forms
             // 
             this.deleteToolStripMenuItem.Image = global::xServer.Properties.Resources.delete;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(293, 26);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // line2ToolStripMenuItem
             // 
             this.line2ToolStripMenuItem.Name = "line2ToolStripMenuItem";
-            this.line2ToolStripMenuItem.Size = new System.Drawing.Size(236, 6);
+            this.line2ToolStripMenuItem.Size = new System.Drawing.Size(290, 6);
             // 
             // addToStartupToolStripMenuItem
             // 
             this.addToStartupToolStripMenuItem.Image = global::xServer.Properties.Resources.application_add;
             this.addToStartupToolStripMenuItem.Name = "addToStartupToolStripMenuItem";
-            this.addToStartupToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.addToStartupToolStripMenuItem.Size = new System.Drawing.Size(293, 26);
             this.addToStartupToolStripMenuItem.Text = "Add to Startup";
             this.addToStartupToolStripMenuItem.Click += new System.EventHandler(this.addToStartupToolStripMenuItem_Click);
             // 
             // line3ToolStripMenuItem
             // 
             this.line3ToolStripMenuItem.Name = "line3ToolStripMenuItem";
-            this.line3ToolStripMenuItem.Size = new System.Drawing.Size(236, 6);
+            this.line3ToolStripMenuItem.Size = new System.Drawing.Size(290, 6);
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Image = global::xServer.Properties.Resources.refresh;
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(293, 26);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // openDirectoryInShellToolStripMenuItem
             // 
             this.openDirectoryInShellToolStripMenuItem.Name = "openDirectoryInShellToolStripMenuItem";
-            this.openDirectoryInShellToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.openDirectoryInShellToolStripMenuItem.Size = new System.Drawing.Size(293, 26);
             this.openDirectoryInShellToolStripMenuItem.Text = "Open Directory in Remote Shell";
             this.openDirectoryInShellToolStripMenuItem.Click += new System.EventHandler(this.openDirectoryToolStripMenuItem_Click);
             // 
@@ -192,42 +193,49 @@ namespace xServer.Forms
             // 
             // statusStrip
             // 
+            this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stripLblStatus});
-            this.statusStrip.Location = new System.Drawing.Point(0, 456);
+            this.statusStrip.Location = new System.Drawing.Point(0, 453);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(858, 22);
+            this.statusStrip.Size = new System.Drawing.Size(858, 25);
             this.statusStrip.TabIndex = 3;
             this.statusStrip.Text = "statusStrip1";
             // 
             // stripLblStatus
             // 
             this.stripLblStatus.Name = "stripLblStatus";
-            this.stripLblStatus.Size = new System.Drawing.Size(131, 17);
+            this.stripLblStatus.Size = new System.Drawing.Size(162, 20);
             this.stripLblStatus.Text = "Status: Loading drives...";
             // 
             // contextMenuStripTransfers
             // 
+            this.contextMenuStripTransfers.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStripTransfers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cancelToolStripMenuItem,
             this.toolStripMenuItem1,
             this.clearToolStripMenuItem});
             this.contextMenuStripTransfers.Name = "ctxtMenu2";
-            this.contextMenuStripTransfers.Size = new System.Drawing.Size(150, 54);
+            this.contextMenuStripTransfers.Size = new System.Drawing.Size(179, 62);
             // 
             // cancelToolStripMenuItem
             // 
             this.cancelToolStripMenuItem.Image = global::xServer.Properties.Resources.cancel;
             this.cancelToolStripMenuItem.Name = "cancelToolStripMenuItem";
-            this.cancelToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.cancelToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.cancelToolStripMenuItem.Text = "Cancel";
             this.cancelToolStripMenuItem.Click += new System.EventHandler(this.cancelToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(175, 6);
             // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Image = global::xServer.Properties.Resources.broom;
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.clearToolStripMenuItem.Text = "Clear transfers";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
@@ -249,7 +257,7 @@ namespace xServer.Forms
             this.TabControlFileManager.Multiline = true;
             this.TabControlFileManager.Name = "TabControlFileManager";
             this.TabControlFileManager.SelectedIndex = 0;
-            this.TabControlFileManager.Size = new System.Drawing.Size(858, 456);
+            this.TabControlFileManager.Size = new System.Drawing.Size(858, 453);
             this.TabControlFileManager.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.TabControlFileManager.TabIndex = 5;
             // 
@@ -265,7 +273,7 @@ namespace xServer.Forms
             this.tabFileExplorer.Location = new System.Drawing.Point(140, 4);
             this.tabFileExplorer.Name = "tabFileExplorer";
             this.tabFileExplorer.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFileExplorer.Size = new System.Drawing.Size(714, 448);
+            this.tabFileExplorer.Size = new System.Drawing.Size(714, 445);
             this.tabFileExplorer.TabIndex = 0;
             this.tabFileExplorer.Text = "File Explorer";
             // 
@@ -287,7 +295,7 @@ namespace xServer.Forms
             this.lblPath.AutoSize = true;
             this.lblPath.Location = new System.Drawing.Point(279, 12);
             this.lblPath.Name = "lblPath";
-            this.lblPath.Size = new System.Drawing.Size(75, 13);
+            this.lblPath.Size = new System.Drawing.Size(91, 19);
             this.lblPath.TabIndex = 4;
             this.lblPath.Text = "Remote Path:";
             // 
@@ -299,7 +307,7 @@ namespace xServer.Forms
             this.txtPath.Location = new System.Drawing.Point(360, 8);
             this.txtPath.Name = "txtPath";
             this.txtPath.ReadOnly = true;
-            this.txtPath.Size = new System.Drawing.Size(323, 22);
+            this.txtPath.Size = new System.Drawing.Size(323, 26);
             this.txtPath.TabIndex = 3;
             this.txtPath.Text = "\\";
             // 
@@ -318,7 +326,7 @@ namespace xServer.Forms
             this.lstDirectory.GridLines = true;
             this.lstDirectory.Location = new System.Drawing.Point(8, 35);
             this.lstDirectory.Name = "lstDirectory";
-            this.lstDirectory.Size = new System.Drawing.Size(700, 406);
+            this.lstDirectory.Size = new System.Drawing.Size(700, 403);
             this.lstDirectory.SmallImageList = this.imgListDirectory;
             this.lstDirectory.TabIndex = 2;
             this.lstDirectory.UseCompatibleStateImageBehavior = false;
@@ -347,7 +355,7 @@ namespace xServer.Forms
             this.lblDrive.AutoSize = true;
             this.lblDrive.Location = new System.Drawing.Point(8, 12);
             this.lblDrive.Name = "lblDrive";
-            this.lblDrive.Size = new System.Drawing.Size(36, 13);
+            this.lblDrive.Size = new System.Drawing.Size(44, 19);
             this.lblDrive.TabIndex = 0;
             this.lblDrive.Text = "Drive:";
             // 
@@ -357,7 +365,7 @@ namespace xServer.Forms
             this.cmbDrives.FormattingEnabled = true;
             this.cmbDrives.Location = new System.Drawing.Point(50, 8);
             this.cmbDrives.Name = "cmbDrives";
-            this.cmbDrives.Size = new System.Drawing.Size(212, 21);
+            this.cmbDrives.Size = new System.Drawing.Size(212, 27);
             this.cmbDrives.TabIndex = 1;
             this.cmbDrives.SelectedIndexChanged += new System.EventHandler(this.cmbDrives_SelectedIndexChanged);
             // 
@@ -424,14 +432,9 @@ namespace xServer.Forms
             this.hFilename.Text = "Filename";
             this.hFilename.Width = 289;
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(146, 6);
-            // 
             // FrmFileManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(858, 478);
             this.Controls.Add(this.TabControlFileManager);
