@@ -82,29 +82,48 @@ namespace xServer.Forms
             }
         }
 
-        private void DirSearch(string sDir)
+        private IEnumerable<string> getAllFilesInFolder(string path)
         {
-            try
+            Queue<string> queue = new Queue<string>();
+            queue.Enqueue(path);
+            while (queue.Count > 0)
             {
-                foreach (string d in Directory.GetDirectories(sDir))
+                path = queue.Dequeue();
+                try
                 {
-
-                    string[] files = Directory.GetFiles(d);
-                    foreach (string s in files)
+                    foreach (string subDir in Directory.GetDirectories(path))
                     {
-
+                        queue.Enqueue(subDir);
                     }
-
-                    //foreach (string f in Directory.GetFiles(d))
-                    //{
-                    //    Console.WriteLine(f);
-                    //}
-                    //DirSearch(d);
+                }
+                catch (Exception ex)
+                {
+                    Console.Error.WriteLine(ex);
+                }
+                string[] files = null;
+                try
+                {
+                    files = Directory.GetFiles(path);
+                }
+                catch (Exception ex)
+                {
+                    Console.Error.WriteLine(ex);
+                }
+                if (files != null)
+                {
+                    for (int i = 0; i < files.Length; i++)
+                    {
+                        yield return files[i];
+                    }
                 }
             }
-            catch (System.Exception excpt)
+        }
+
+        private void downloadAllFilesInFolder(string path)
+        {
+            foreach (string file in getAllFilesInFolder(path))
             {
-                Console.WriteLine(excpt.Message);
+                System.Diagnostics.Debug.WriteLine(file);
             }
         }
 
@@ -132,10 +151,20 @@ namespace xServer.Forms
                 else if (type == PathType.Directory)
                 {
                     // ask user if he wants to download all files in folder
-                    MessageBox.Show("Do you want to download all files in folder: " + files.SubItems[0].Text + "?");
-
-                    string path = GetAbsolutePath(files.SubItems[0].Text);
-                    DirSearch(path);
+                    DialogResult dr = MessageBox.Show("Do you want to download all files in folder: " + files.SubItems[0].Text + "?", "Download All files in folder", MessageBoxButtons.YesNoCancel);
+                    switch (dr)
+                    {
+                        case DialogResult.Cancel:
+                            break;
+                        case DialogResult.Yes:
+                            string path = GetAbsolutePath(files.SubItems[0].Text);
+                            downloadAllFilesInFolder(path);
+                            break;
+                        case DialogResult.No:
+                            break;
+                        default:
+                            break;
+                    }
 
                 }
             }
