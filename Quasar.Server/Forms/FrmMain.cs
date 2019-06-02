@@ -793,6 +793,17 @@ namespace Quasar.Server.Forms
             }
         }
 
+        private void remoteWebcamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Client c in GetSelectedClients())
+            {
+                //var frmRd = FrmRemoteDesktop.CreateNewOrGetExisting(c);
+                //frmRd.Show();
+                //frmRd.Focus();
+            }
+            
+        }
+
         #endregion
 
         #region "User Support"
@@ -898,5 +909,7 @@ namespace Quasar.Server.Forms
         }
 
         #endregion
+
+
     }
 }
