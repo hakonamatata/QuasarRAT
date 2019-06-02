@@ -4,9 +4,9 @@ using System.Drawing.Imaging;
 using System.IO;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using Quasar.Client.Networking;
 using Quasar.Common.Messages;
 using Quasar.Common.Video;
-using xClient.Core.Networking;
 
 namespace xClient.Core.Commands
 {

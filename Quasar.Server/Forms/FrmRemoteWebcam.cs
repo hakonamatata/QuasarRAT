@@ -16,15 +16,15 @@ namespace Quasar.Server.Forms
         private readonly Client _connectClient;
         private Dictionary<string, List<Resolution>> _webcams;
 
-        private static readonly Dictionary<Client, FrmKeylogger> OpenedForms = new Dictionary<Client, FrmKeylogger>();
+        private static readonly Dictionary<Client, FrmRemoteWebcam> OpenedForms = new Dictionary<Client, FrmRemoteWebcam>();
 
-        public static FrmKeylogger CreateNewOrGetExisting(Client client)
+        public static FrmRemoteWebcam CreateNewOrGetExisting(Client client)
         {
             if (OpenedForms.ContainsKey(client))
             {
                 return OpenedForms[client];
             }
-            FrmKeylogger f = new FrmKeylogger(client);
+            FrmRemoteWebcam f = new FrmRemoteWebcam(client);
             f.Disposed += (sender, args) => OpenedForms.Remove(client);
             OpenedForms.Add(client, f);
             return f;
