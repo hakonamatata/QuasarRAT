@@ -1,5 +1,7 @@
 ﻿using Quasar.Common.Cryptography;
 using Quasar.Common.Helpers;
+using Quasar.Server.Forms;
+using System;
 using System.IO;
 using System.Windows.Forms;
 
@@ -31,5 +33,29 @@ namespace Quasar.Server.Networking
         public string DownloadDirectory => _downloadDirectory ?? (_downloadDirectory = (!FileHelper.HasIllegalCharacters(UserAtPc))
                                                ? Path.Combine(Application.StartupPath, $"Clients\\{UserAtPc}_{Id.Substring(0, 7)}\\")
                                                : Path.Combine(Application.StartupPath, $"Clients\\{Id}\\"));
+
+        public FrmRemoteWebcam FrmWebcam { get; set; }
+
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                try
+                {
+                    if (FrmWebcam != null)
+                        FrmWebcam.Invoke((MethodInvoker)delegate { FrmWebcam.Close(); });
+                    //if (FrmPass != null)
+                    //FrmPass.Invoke((MethodInvoker)delegate { FrmPass.Close(); });
+                }
+                catch (InvalidOperationException)
+                {
+                }
+            }
+        }
     }
 }

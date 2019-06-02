@@ -65,6 +65,10 @@
     <Compile Include="Messages\ClientIdentification.cs" />
     <Compile Include="Messages\ClientIdentificationResult.cs" />
     <Compile Include="Messages\FileTransferChunk.cs" />
+    <Compile Include="Messages\GetWebcam.cs" />
+    <Compile Include="Messages\GetWebcamResponse.cs" />
+    <Compile Include="Messages\GetWebcams.cs" />
+    <Compile Include="Messages\GetWebcamsResponse.cs" />
     <Compile Include="Messages\TypeRegistry.cs" />
     <Compile Include="Models\Drive.cs" />
     <Compile Include="Messages\MessageProcessorBase.cs" />

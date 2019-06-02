@@ -797,9 +797,9 @@ namespace Quasar.Server.Forms
         {
             foreach (Client c in GetSelectedClients())
             {
-                //var frmRd = FrmRemoteDesktop.CreateNewOrGetExisting(c);
-                //frmRd.Show();
-                //frmRd.Focus();
+                var frmRd = FrmRemoteWebcam.CreateNewOrGetExisting(c);
+                frmRd.Show();
+                frmRd.Focus();
             }
             
         }
